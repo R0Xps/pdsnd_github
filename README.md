@@ -15,5 +15,10 @@ The data files referenced in the script:
 - new_york_city.csv
 - washington.csv
 
+### Required python modules
+The following modules must be installed for the script to run correctly:
+- [Pandas](https://pandas.pydata.org/)
+- [Numpy](https://numpy.org/)
+
 ### Credits
 I used the template provided in the `Introduction to Python` lesson which is a **Core Lesson** for the `Programming for Data Science with Python` nanodegree, and made the necessary changes to get the final [python script](./bikeshare.py).
