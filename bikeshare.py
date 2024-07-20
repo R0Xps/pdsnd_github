@@ -197,17 +197,26 @@ def user_stats(df):
     print('-' * 40)
 
 
+def get_yes_no_choice(message):
+    while True:
+        choice = input(message).strip().lower()
+        if choice in ('yes', 'no'):
+            return choice
+        print(f'Invalid choice ({choice}). Please try again')
+
+
 def raw_data(df):
     """Displays the raw data of the file 5 rows at a time"""
     
-    choice = input('Would you like to see the raw data? yes/no\n').strip().lower()
+    choice = get_yes_no_choice('Would you like to see the raw data? yes/no\n')
     rows = df.shape[0]
     curr_row = 0
     
     while choice == 'yes' and curr_row < rows:
         print(df[curr_row : curr_row + 5])
         curr_row += 5
-        choice = input('Would you like to see 5 more rows of the raw data? yes/no\n').strip().lower()
+        choice = get_yes_no_choice('Would you like to see 5 more rows of the raw data? yes/no\n')
+
 
 def main():
     while True:
@@ -220,8 +229,8 @@ def main():
         user_stats(df)
         raw_data(df)
         
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = get_yes_no_choice('\nWould you like to restart? Enter yes or no.\n')
+        if restart != 'yes':
             break
 
 
